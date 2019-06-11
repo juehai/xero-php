@@ -18,4 +18,4 @@ composer require ravebuild/xero-php
 ```
 
 
-All other documentation please read the (official README)[https://github.com/calcinai/xero-php/blob/master/README.md].
+All other documentation please read the [official README](https://github.com/calcinai/xero-php/blob/master/README.md).
