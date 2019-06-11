@@ -1,8 +1,8 @@
 {
-    "name": "calcinai/xero-php",
+    "name": "ravebuild/xero-php",
     "type": "library",
-    "description": "A client implementation of the Xero API, with a cleaner OAuth interface and ORM-like abstraction.",
-    "homepage": "https://github.com/calcinai/xero-php",
+    "description": "A client implementation of the Xero API, with a cleaner OAuth interface and ORM-like abstraction. With Ravebuild fixes.",
+    "homepage": "https://github.com/juehai/xero-php",
     "license": "MIT",
 
     "require": {
