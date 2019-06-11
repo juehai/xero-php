@@ -16,10 +16,6 @@
     },
 
     "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/juehai/xero-php"
-      }
     ],
 
     "autoload": {
