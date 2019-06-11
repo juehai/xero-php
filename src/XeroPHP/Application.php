@@ -406,7 +406,7 @@ abstract class Application
 
                 $response = $request->getResponse();
                 foreach ($response->getElements() as $element_index => $element) {
-                    if ($response->getErrorsForElement($element_index) === null) {
+                    if ($response->getErrorsForElement($element_index) === null && isset($property_objects[$element_index])) {
                         $property_objects[$element_index]->fromStringArray($element);
                         $property_objects[$element_index]->setClean();
                     }
