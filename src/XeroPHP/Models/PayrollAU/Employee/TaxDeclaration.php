@@ -7,106 +7,111 @@ use XeroPHP\Remote;
 class TaxDeclaration extends Remote\Model
 {
     /**
-     * Xero employee identifier. e.g c56b19ef-75bf-45e8-98a4-e699a96609f7
+     * Xero employee identifier. e.g c56b19ef-75bf-45e8-98a4-e699a96609f7.
      *
      * @property string EmployeeID
      */
 
     /**
-     * See Employment Basis Types
+     * See Employment Basis Types.
      *
      * @property string EmploymentBasis
      */
 
     /**
-     * See TFN Exemption Types
+     * See TFN Exemption Types.
      *
      * @property string TFNExemptionType
      */
 
     /**
-     * The tax file number e.g 123123123
+     * The tax file number e.g 123123123.
      *
      * @property string TaxFileNumber
      */
 
     /**
-     * If the employee is Australian resident for tax purposes. e.g true or false
+     * If the employee is Australian resident for tax purposes. e.g true or false.
      *
      * @property string AustralianResidentForTaxPurposes
      */
 
     /**
-     * If tax free threshold claimed. e.g true or false
+     * If tax free threshold claimed. e.g true or false.
      *
      * @property string TaxFreeThresholdClaimed
      */
 
     /**
-     * If has tax offset estimated then the tax offset estimated amount. e.g 100
+     * If has tax offset estimated then the tax offset estimated amount. e.g 100.
      *
      * @property float TaxOffsetEstimatedAmount
      */
 
     /**
-     * If employee has HECS or HELP dept. e.g true or false
+     * If employee has HECS or HELP dept. e.g true or false.
      *
      * @property bool HasHELPDebt
      */
 
     /**
-     * If employee has financial supplement dept. e.g true or false
+     * If employee has financial supplement dept. e.g true or false.
      *
      * @property bool HasSFSSDebt
      */
 
     /**
-     * This property has been removed from the Xero API
+     * This property has been removed from the Xero API.
      *
      * @property bool HasTSLDebt
+     *
      * @deprecated
      */
 
     /**
-     * If employee has trade support loan. e.g true or false
+     * If employee has trade support loan. e.g true or false.
      *
      * @property bool HasTradeSupportLoanDebt
      */
 
     /**
-     * If the employee has requested that additional tax be withheld each pay run. e.g 50
+     * If the employee has requested that additional tax be withheld each pay run. e.g 50.
      *
      * @property string UpwardVariationTaxWithholdingAmount
      */
 
     /**
      * If the employee is eligible to receive an additional percentage on top of ordinary earnings when
-     * they take leave (typically 17.5%). e.g true or false
+     * they take leave (typically 17.5%). e.g true or false.
      *
      * @property string EligibleToReceiveLeaveLoading
      */
 
     /**
-     * If the employee has approved withholding variation. e.g (0 – 100)
+     * If the employee has approved withholding variation. e.g (0 – 100).
      *
      * @property string ApprovedWithholdingVariationPercentage
      */
-
-
     const EMPLOYMENTBASIS_FULLTIME = 'FULLTIME';
+
     const EMPLOYMENTBASIS_PARTTIME = 'PARTTIME';
+
     const EMPLOYMENTBASIS_CASUAL = 'CASUAL';
+
     const EMPLOYMENTBASIS_LABOURHIRE = 'LABOURHIRE';
+
     const EMPLOYMENTBASIS_SUPERINCOMESTREAM = 'SUPERINCOMESTREAM';
 
     const TFNEXEMPTIONTYPE_NOTQUOTED = 'NOTQUOTED';
+
     const TFNEXEMPTIONTYPE_PENDING = 'PENDING';
+
     const TFNEXEMPTIONTYPE_PENSIONER = 'PENSIONER';
+
     const TFNEXEMPTIONTYPE_UNDER18 = 'UNDER18';
 
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -115,9 +120,8 @@ class TaxDeclaration extends Remote\Model
         return 'TaxDeclaration';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -126,9 +130,8 @@ class TaxDeclaration extends Remote\Model
         return 'TaxDeclaration';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -137,9 +140,8 @@ class TaxDeclaration extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -148,9 +150,8 @@ class TaxDeclaration extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -159,13 +160,12 @@ class TaxDeclaration extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -205,6 +205,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setEmployeeID($value)
@@ -225,6 +226,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setEmploymentBasis($value)
@@ -245,6 +247,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setTFNExemptionType($value)
@@ -265,6 +268,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setTaxFileNumber($value)
@@ -285,6 +289,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setAustralianResidentForTaxPurpose($value)
@@ -294,7 +299,6 @@ class TaxDeclaration extends Remote\Model
 
         return $this;
     }
-
 
     /** @param string $value
      * @return $this
@@ -315,7 +319,6 @@ class TaxDeclaration extends Remote\Model
         return $this->_data['ResidencyStatus'];
     }
 
-
     /**
      * @return string
      */
@@ -326,6 +329,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setTaxFreeThresholdClaimed($value)
@@ -346,6 +350,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return TaxDeclaration
      */
     public function setTaxOffsetEstimatedAmount($value)
@@ -366,6 +371,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return TaxDeclaration
      */
     public function setHasHELPDebt($value)
@@ -386,6 +392,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return TaxDeclaration
      */
     public function setHasSFSSDebt($value)
@@ -398,6 +405,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @return bool
+     *
      * @deprecated
      */
     public function getHasTSLDebt()
@@ -407,7 +415,9 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return TaxDeclaration
+     *
      * @deprecated
      */
     public function setHasTSLDebt($value)
@@ -428,6 +438,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return TaxDeclaration
      */
     public function setHasTradeSupportLoanDebt($value)
@@ -448,6 +459,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setUpwardVariationTaxWithholdingAmount($value)
@@ -468,6 +480,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setEligibleToReceiveLeaveLoading($value)
@@ -488,6 +501,7 @@ class TaxDeclaration extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TaxDeclaration
      */
     public function setApprovedWithholdingVariationPercentage($value)

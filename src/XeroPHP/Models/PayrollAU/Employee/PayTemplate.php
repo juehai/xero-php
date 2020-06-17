@@ -12,37 +12,37 @@ use XeroPHP\Models\PayrollAU\Employee\PayTemplate\ReimbursementLine;
 class PayTemplate extends Remote\Model
 {
     /**
-     * The earnings rate lines
+     * The earnings rate lines.
      *
      * @property EarningsLine[] EarningsLines
      */
 
     /**
-     * The deduction type lines
+     * The deduction type lines.
      *
      * @property DeductionLine[] DeductionLines
      */
 
     /**
-     * The superannuation fund lines
+     * The superannuation fund lines.
      *
      * @property SuperLine[] SuperLines
      */
 
     /**
-     * The reimbursement type lines
+     * The reimbursement type lines.
      *
      * @property ReimbursementLine[] ReimbursementLines
      */
 
     /**
-     * The leave type lines
+     * The leave type lines.
      *
      * @property LeaveLine[] LeaveLines
      */
 
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -51,9 +51,8 @@ class PayTemplate extends Remote\Model
         return 'PayTemplate';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -62,9 +61,8 @@ class PayTemplate extends Remote\Model
         return 'PayTemplate';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -73,9 +71,8 @@ class PayTemplate extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -84,9 +81,8 @@ class PayTemplate extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -95,13 +91,12 @@ class PayTemplate extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -123,7 +118,6 @@ class PayTemplate extends Remote\Model
 
     /**
      * @return EarningsLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getEarningsLines()
     {
@@ -132,6 +126,7 @@ class PayTemplate extends Remote\Model
 
     /**
      * @param EarningsLine $value
+     *
      * @return PayTemplate
      */
     public function addEarningsLine(EarningsLine $value)
@@ -147,7 +142,6 @@ class PayTemplate extends Remote\Model
 
     /**
      * @return DeductionLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getDeductionLines()
     {
@@ -156,6 +150,7 @@ class PayTemplate extends Remote\Model
 
     /**
      * @param DeductionLine $value
+     *
      * @return PayTemplate
      */
     public function addDeductionLine(DeductionLine $value)
@@ -170,8 +165,7 @@ class PayTemplate extends Remote\Model
     }
 
     /**
-     * @return SuperLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|SuperLine[]
      */
     public function getSuperLines()
     {
@@ -180,6 +174,7 @@ class PayTemplate extends Remote\Model
 
     /**
      * @param SuperLine $value
+     *
      * @return PayTemplate
      */
     public function addSuperLine(SuperLine $value)
@@ -195,7 +190,6 @@ class PayTemplate extends Remote\Model
 
     /**
      * @return ReimbursementLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getReimbursementLines()
     {
@@ -204,6 +198,7 @@ class PayTemplate extends Remote\Model
 
     /**
      * @param ReimbursementLine $value
+     *
      * @return PayTemplate
      */
     public function addReimbursementLine(ReimbursementLine $value)
@@ -219,7 +214,6 @@ class PayTemplate extends Remote\Model
 
     /**
      * @return LeaveLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getLeaveLines()
     {
@@ -228,6 +222,7 @@ class PayTemplate extends Remote\Model
 
     /**
      * @param LeaveLine $value
+     *
      * @return PayTemplate
      */
     public function addLeaveLine(LeaveLine $value)

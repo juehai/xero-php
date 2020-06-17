@@ -7,13 +7,13 @@ use XeroPHP\Remote;
 class Folder extends Remote\Model
 {
     /**
-     * The name of the folder
+     * The name of the folder.
      *
      * @property string Name
      */
 
     /**
-     * The number of files in the folder
+     * The number of files in the folder.
      *
      * @property string FileCount
      */
@@ -31,7 +31,7 @@ class Folder extends Remote\Model
      */
 
     /**
-     * Xero unique identifier for a folder
+     * Xero unique identifier for a folder.
      *
      * @property string Id
      */
@@ -45,15 +45,13 @@ class Folder extends Remote\Model
 
     /**
      * You can specify an individual record by appending the FolderId to the endpoint, i.e. GET
-     * https://…/Folders/{FolderId}
+     * https://…/Folders/{FolderId}.
      *
      * @property string FolderId
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -62,9 +60,8 @@ class Folder extends Remote\Model
         return 'Folders';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -73,9 +70,8 @@ class Folder extends Remote\Model
         return 'Folder';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -84,9 +80,8 @@ class Folder extends Remote\Model
         return 'Id';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -95,9 +90,8 @@ class Folder extends Remote\Model
         return Remote\URL::API_FILE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -110,13 +104,12 @@ class Folder extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -148,6 +141,7 @@ class Folder extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Folder
      */
     public function setName($value)
@@ -168,6 +162,7 @@ class Folder extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Folder
      */
     public function setFileCount($value)
@@ -188,6 +183,7 @@ class Folder extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Folder
      */
     public function setEmail($value)
@@ -208,6 +204,7 @@ class Folder extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return Folder
      */
     public function setIsInbox($value)
@@ -228,6 +225,7 @@ class Folder extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Folder
      */
     public function setId($value)
@@ -240,7 +238,6 @@ class Folder extends Remote\Model
 
     /**
      * @return File[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getFiles()
     {
@@ -249,6 +246,7 @@ class Folder extends Remote\Model
 
     /**
      * @param File $value
+     *
      * @return Folder
      */
     public function addFile(File $value)
@@ -272,6 +270,7 @@ class Folder extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Folder
      */
     public function setFolderId($value)

@@ -6,27 +6,27 @@ use XeroPHP\Remote;
 
 class PaymentTerm extends Remote\Model
 {
-    /**
-     * Default payment terms for bills (accounts payable) – see Payment Terms
-     *
-     * @property Bill[] Bills
-     */
+     /**
+      * Default payment terms for bills (accounts payable) – see Payment Terms.
+      *
+      * @property Bill[] Bills
+      */
 
-    /**
-     * Default payment terms for sales invoices(accounts receivable) – see Payment Terms
-     *
-     * @property Sale[] Sales
-     */
-
-
+     /**
+      * Default payment terms for sales invoices(accounts receivable) – see Payment Terms.
+      *
+      * @property Sale[] Sales
+      */
      const DAYSAFTERBILLDATE = 'DAYSAFTERBILLDATE';
+
      const DAYSAFTERBILLMONTH = 'DAYSAFTERBILLMONTH';
+
      const OFCURRENTMONTH = 'OFCURRENTMONTH';
+
      const OFFOLLOWINGMONTH = 'OFFOLLOWINGMONTH';
 
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -35,9 +35,8 @@ class PaymentTerm extends Remote\Model
         return 'PaymentTerms';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -46,9 +45,8 @@ class PaymentTerm extends Remote\Model
         return 'PaymentTerm';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -57,9 +55,8 @@ class PaymentTerm extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -68,9 +65,8 @@ class PaymentTerm extends Remote\Model
         return Remote\URL::API_CORE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -79,13 +75,12 @@ class PaymentTerm extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -104,7 +99,6 @@ class PaymentTerm extends Remote\Model
 
     /**
      * @return Bill[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getBills()
     {
@@ -113,6 +107,7 @@ class PaymentTerm extends Remote\Model
 
     /**
      * @param Bill $value
+     *
      * @return PaymentTerm
      */
     public function addBill(Bill $value)
@@ -127,8 +122,7 @@ class PaymentTerm extends Remote\Model
     }
 
     /**
-     * @return Sale[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|Sale[]
      */
     public function getSales()
     {
@@ -137,6 +131,7 @@ class PaymentTerm extends Remote\Model
 
     /**
      * @param Sale $value
+     *
      * @return PaymentTerm
      */
     public function addSale(Sale $value)

@@ -24,10 +24,8 @@ class LeaveAccrualLine extends Remote\Model
      * @property string AutoCalculate
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -36,9 +34,8 @@ class LeaveAccrualLine extends Remote\Model
         return 'LeaveAccrualLine';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -47,9 +44,8 @@ class LeaveAccrualLine extends Remote\Model
         return 'LeaveAccrualLine';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -58,9 +54,8 @@ class LeaveAccrualLine extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -69,9 +64,8 @@ class LeaveAccrualLine extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -80,13 +74,12 @@ class LeaveAccrualLine extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -114,6 +107,7 @@ class LeaveAccrualLine extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return LeaveAccrualLine
      */
     public function setLeaveTypeID($value)
@@ -134,6 +128,7 @@ class LeaveAccrualLine extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return LeaveAccrualLine
      */
     public function setNumberOfUnit($value)
@@ -154,6 +149,7 @@ class LeaveAccrualLine extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return LeaveAccrualLine
      */
     public function setAutoCalculate($value)

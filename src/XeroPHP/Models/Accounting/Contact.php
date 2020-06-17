@@ -14,7 +14,7 @@ class Contact extends Remote\Model
     use HistoryTrait;
 
     /**
-     * Xero identifier
+     * Xero identifier.
      *
      * @property string ContactID
      */
@@ -28,55 +28,55 @@ class Contact extends Remote\Model
      */
 
     /**
-     * A user defined account number. This can be updated via the API and the Xero UI (max length = 50)
+     * A user defined account number. This can be updated via the API and the Xero UI (max length = 50).
      *
      * @property string AccountNumber
      */
 
     /**
-     * Current status of a contact – see contact status types
+     * Current status of a contact – see contact status types.
      *
      * @property string ContactStatus
      */
 
     /**
-     * Full name of contact/organisation (max length = 255)
+     * Full name of contact/organisation (max length = 255).
      *
      * @property string Name
      */
 
     /**
-     * First name of contact person (max length = 255)
+     * First name of contact person (max length = 255).
      *
      * @property string FirstName
      */
 
     /**
-     * Last name of contact person (max length = 255)
+     * Last name of contact person (max length = 255).
      *
      * @property string LastName
      */
 
     /**
-     * Email address of contact person (umlauts not supported) (max length = 255)
+     * Email address of contact person (umlauts not supported) (max length = 255).
      *
      * @property string EmailAddress
      */
 
     /**
-     * Skype user name of contact
+     * Skype user name of contact.
      *
      * @property string SkypeUserName
      */
 
     /**
-     * See contact persons
+     * See contact persons.
      *
      * @property ContactPerson[] ContactPersons
      */
 
     /**
-     * Bank account number of contact
+     * Bank account number of contact.
      *
      * @property string BankAccountDetails
      */
@@ -84,31 +84,31 @@ class Contact extends Remote\Model
     /**
      * Tax number of contact – this is also known as the ABN (Australia), GST Number (New Zealand), VAT
      * Number (UK) or Tax ID Number (US and global) in the Xero UI depending on which regionalized version
-     * of Xero you are using (max length = 50)
+     * of Xero you are using (max length = 50).
      *
      * @property string TaxNumber
      */
 
     /**
-     * Default tax type used for contact on AR invoices
+     * Default tax type used for contact on AR invoices.
      *
      * @property string AccountsReceivableTaxType
      */
 
     /**
-     * Default tax type used for contact on AP invoices
+     * Default tax type used for contact on AP invoices.
      *
      * @property string AccountsPayableTaxType
      */
 
     /**
-     * Store certain address types for a contact – see address types
+     * Store certain address types for a contact – see address types.
      *
      * @property Address[] Addresses
      */
 
     /**
-     * Store certain phone types for a contact – see phone types
+     * Store certain phone types for a contact – see phone types.
      *
      * @property Phone[] Phones
      */
@@ -130,7 +130,7 @@ class Contact extends Remote\Model
      */
 
     /**
-     * Default currency for raising invoices against contact
+     * Default currency for raising invoices against contact.
      *
      * @property string DefaultCurrency
      */
@@ -142,105 +142,103 @@ class Contact extends Remote\Model
      */
 
     /**
-     * The default sales account code for contacts
+     * The default sales account code for contacts.
      *
      * @property string SalesDefaultAccountCode
      */
 
     /**
-     * The default purchases account code for contacts
+     * The default purchases account code for contacts.
      *
      * @property string PurchasesDefaultAccountCode
      */
 
     /**
-     * The default sales tracking categories for contacts
+     * The default sales tracking categories for contacts.
      *
      * @property TrackingCategory[] SalesTrackingCategories
      */
 
     /**
-     * The default purchases tracking categories for contacts
+     * The default purchases tracking categories for contacts.
      *
      * @property TrackingCategory[] PurchasesTrackingCategories
      */
 
     /**
      * The name of the Tracking Category assigned to the contact under SalesTrackingCategories and
-     * PurchasesTrackingCategories
+     * PurchasesTrackingCategories.
      *
      * @property string TrackingCategoryName
      */
 
     /**
      * The name of the Tracking Option assigned to the contact under SalesTrackingCategories and
-     * PurchasesTrackingCategories
+     * PurchasesTrackingCategories.
      *
      * @property string TrackingCategoryOption
      */
 
     /**
-     * The default payment terms for the contact – see Payment Terms
+     * The default payment terms for the contact – see Payment Terms.
      *
      * @property PaymentTerm[] PaymentTerms
      */
 
     /**
-     * UTC timestamp of last update to contact
+     * UTC timestamp of last update to contact.
      *
      * @property \DateTimeInterface UpdatedDateUTC
      */
 
     /**
-     * Displays which contact groups a contact is included in
+     * Displays which contact groups a contact is included in.
      *
      * @property ContactGroup[] ContactGroups
      */
 
     /**
-     * Website address for contact (read only)
+     * Website address for contact (read only).
      *
      * @property string Website
      */
 
     /**
-     * Default branding theme for contact (read only) – see Branding Themes
+     * Default branding theme for contact (read only) – see Branding Themes.
      *
      * @property BrandingTheme BrandingTheme
      */
 
     /**
-     * batch payment details for contact (read only)
+     * batch payment details for contact (read only).
      *
      * @property string BatchPayments
      */
 
     /**
-     * The default discount rate for the contact (read only)
+     * The default discount rate for the contact (read only).
      *
      * @property float Discount
      */
 
     /**
      * The raw AccountsReceivable(sales invoices) and AccountsPayable(bills) outstanding and overdue
-     * amounts, not converted to base currency (read only)
+     * amounts, not converted to base currency (read only).
      *
      * @property string Balances
      */
 
     /**
-     * A boolean to indicate if a contact has an attachment
+     * A boolean to indicate if a contact has an attachment.
      *
      * @property bool HasAttachments
      */
-
-
     const CONTACT_STATUS_ACTIVE = 'ACTIVE';
+
     const CONTACT_STATUS_ARCHIVED = 'ARCHIVED';
 
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -249,9 +247,8 @@ class Contact extends Remote\Model
         return 'Contacts';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -260,9 +257,8 @@ class Contact extends Remote\Model
         return 'Contact';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -271,9 +267,8 @@ class Contact extends Remote\Model
         return 'ContactID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -282,9 +277,8 @@ class Contact extends Remote\Model
         return Remote\URL::API_CORE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -296,13 +290,12 @@ class Contact extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -362,6 +355,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setContactID($value)
@@ -382,6 +376,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setContactNumber($value)
@@ -402,6 +397,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setAccountNumber($value)
@@ -422,6 +418,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setContactStatus($value)
@@ -442,6 +439,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setName($value)
@@ -462,6 +460,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setFirstName($value)
@@ -482,6 +481,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setLastName($value)
@@ -502,6 +502,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setEmailAddress($value)
@@ -522,6 +523,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setSkypeUserName($value)
@@ -534,7 +536,6 @@ class Contact extends Remote\Model
 
     /**
      * @return ContactPerson[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getContactPersons()
     {
@@ -543,6 +544,7 @@ class Contact extends Remote\Model
 
     /**
      * @param ContactPerson $value
+     *
      * @return Contact
      */
     public function addContactPerson(ContactPerson $value)
@@ -566,6 +568,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setBankAccountDetail($value)
@@ -586,6 +589,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setTaxNumber($value)
@@ -606,6 +610,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setAccountsReceivableTaxType($value)
@@ -626,6 +631,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setAccountsPayableTaxType($value)
@@ -638,7 +644,6 @@ class Contact extends Remote\Model
 
     /**
      * @return Address[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getAddresses()
     {
@@ -647,6 +652,7 @@ class Contact extends Remote\Model
 
     /**
      * @param Address $value
+     *
      * @return Contact
      */
     public function addAddress(Address $value)
@@ -662,7 +668,6 @@ class Contact extends Remote\Model
 
     /**
      * @return Phone[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getPhones()
     {
@@ -671,6 +676,7 @@ class Contact extends Remote\Model
 
     /**
      * @param Phone $value
+     *
      * @return Contact
      */
     public function addPhone(Phone $value)
@@ -694,6 +700,7 @@ class Contact extends Remote\Model
 
     /**
      * @deprecated - this is a read only property and this method will be removed in future versions
+     *
      * @param $value
      */
     public function setIsSupplier($value)
@@ -710,6 +717,7 @@ class Contact extends Remote\Model
 
     /**
      * @deprecated - this is a read only property and this method will be removed in future versions
+     *
      * @param $value
      */
     public function setIsCustomer($value)
@@ -726,6 +734,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setDefaultCurrency($value)
@@ -746,6 +755,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setXeroNetworkKey($value)
@@ -766,6 +776,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setSalesDefaultAccountCode($value)
@@ -786,6 +797,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setPurchasesDefaultAccountCode($value)
@@ -797,8 +809,7 @@ class Contact extends Remote\Model
     }
 
     /**
-     * @return TrackingCategory[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TrackingCategory[]
      */
     public function getSalesTrackingCategories()
     {
@@ -807,6 +818,7 @@ class Contact extends Remote\Model
 
     /**
      * @param TrackingCategory $value
+     *
      * @return Contact
      */
     public function addSalesTrackingCategory(TrackingCategory $value)
@@ -821,8 +833,7 @@ class Contact extends Remote\Model
     }
 
     /**
-     * @return TrackingCategory[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TrackingCategory[]
      */
     public function getPurchasesTrackingCategories()
     {
@@ -831,6 +842,7 @@ class Contact extends Remote\Model
 
     /**
      * @param TrackingCategory $value
+     *
      * @return Contact
      */
     public function addPurchasesTrackingCategory(TrackingCategory $value)
@@ -854,6 +866,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setTrackingCategoryName($value)
@@ -874,6 +887,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setTrackingCategoryOption($value)
@@ -886,7 +900,6 @@ class Contact extends Remote\Model
 
     /**
      * @return PaymentTerm[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getPaymentTerms()
     {
@@ -895,6 +908,7 @@ class Contact extends Remote\Model
 
     /**
      * @param PaymentTerm $value
+     *
      * @return Contact
      */
     public function addPaymentTerm(PaymentTerm $value)
@@ -918,6 +932,7 @@ class Contact extends Remote\Model
 
     /**
      * @param \DateTimeInterface $value
+     *
      * @return Contact
      */
     public function setUpdatedDateUTC(\DateTimeInterface $value)
@@ -930,7 +945,6 @@ class Contact extends Remote\Model
 
     /**
      * @return ContactGroup[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getContactGroups()
     {
@@ -939,6 +953,7 @@ class Contact extends Remote\Model
 
     /**
      * @param ContactGroup $value
+     *
      * @return Contact
      */
     public function addContactGroup(ContactGroup $value)
@@ -962,6 +977,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setWebsite($value)
@@ -982,6 +998,7 @@ class Contact extends Remote\Model
 
     /**
      * @param BrandingTheme $value
+     *
      * @return Contact
      */
     public function setBrandingTheme(BrandingTheme $value)
@@ -1002,6 +1019,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setBatchPayment($value)
@@ -1022,6 +1040,7 @@ class Contact extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Contact
      */
     public function setDiscount($value)
@@ -1042,6 +1061,7 @@ class Contact extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Contact
      */
     public function setBalance($value)
@@ -1062,6 +1082,7 @@ class Contact extends Remote\Model
 
     /**
      * @deprecated - this is a read only property and this method will be removed in future versions
+     *
      * @param $value
      */
     public function setHasAttachment($value)

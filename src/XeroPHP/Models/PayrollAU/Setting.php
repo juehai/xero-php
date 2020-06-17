@@ -10,27 +10,25 @@ class Setting extends Remote\Model
 {
     /**
      * Payroll Account details for SuperExpense, SuperLiabilty, WagesExpense, PAYGLiability & WagesPayable.
-     *  See Accounts
+     *  See Accounts.
      *
      * @property Account[] Accounts
      */
 
     /**
-     * Tracking categories for Employee’s and Timesheet’s.  See Tracking Categories
+     * Tracking categories for Employee’s and Timesheet’s.  See Tracking Categories.
      *
      * @property TrackingCategory[] TrackingCategories
      */
 
     /**
-     * Number of days in the Payroll year
+     * Number of days in the Payroll year.
      *
      * @property string DaysInPayrollYear
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -39,9 +37,8 @@ class Setting extends Remote\Model
         return 'Settings';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -50,9 +47,8 @@ class Setting extends Remote\Model
         return 'Setting';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -61,9 +57,8 @@ class Setting extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -72,9 +67,8 @@ class Setting extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -84,13 +78,12 @@ class Setting extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -110,7 +103,6 @@ class Setting extends Remote\Model
 
     /**
      * @return Account[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getAccounts()
     {
@@ -119,6 +111,7 @@ class Setting extends Remote\Model
 
     /**
      * @param Account $value
+     *
      * @return Setting
      */
     public function addAccount(Account $value)
@@ -133,8 +126,7 @@ class Setting extends Remote\Model
     }
 
     /**
-     * @return TrackingCategory[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TrackingCategory[]
      */
     public function getTrackingCategories()
     {
@@ -143,6 +135,7 @@ class Setting extends Remote\Model
 
     /**
      * @param TrackingCategory $value
+     *
      * @return Setting
      */
     public function addTrackingCategory(TrackingCategory $value)
@@ -166,6 +159,7 @@ class Setting extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Setting
      */
     public function setDaysInPayrollYear($value)

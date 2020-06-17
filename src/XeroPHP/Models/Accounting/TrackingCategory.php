@@ -8,39 +8,37 @@ use XeroPHP\Models\Accounting\TrackingCategory\TrackingOption;
 class TrackingCategory extends Remote\Model
 {
     /**
-     * The Xero identifier for a tracking categorye.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9
+     * The Xero identifier for a tracking categorye.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9.
      *
      * @property string TrackingCategoryID
      */
 
     /**
-     * The name of the tracking category e.g. Department, Region (max length = 100)
+     * The name of the tracking category e.g. Department, Region (max length = 100).
      *
      * @property string Name
      */
 
     /**
-     * The status of a tracking category
+     * The status of a tracking category.
      *
      * @property string Status
      */
 
     /**
-     * See Tracking Options
+     * See Tracking Options.
      *
      * @property TrackingOption[] Options
      */
 
     /**
-     * Selected Option name
+     * Selected Option name.
      *
      * @property string Option
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -49,9 +47,8 @@ class TrackingCategory extends Remote\Model
         return 'TrackingCategories';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -60,9 +57,8 @@ class TrackingCategory extends Remote\Model
         return 'TrackingCategory';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -71,9 +67,8 @@ class TrackingCategory extends Remote\Model
         return 'TrackingCategoryID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -82,9 +77,8 @@ class TrackingCategory extends Remote\Model
         return Remote\URL::API_CORE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -97,13 +91,12 @@ class TrackingCategory extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -135,6 +128,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setTrackingCategoryID($value)
@@ -155,6 +149,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setName($value)
@@ -175,6 +170,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setTrackingCategoryName($value)
@@ -195,6 +191,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setTrackingOptionName($value)
@@ -215,6 +212,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setStatus($value)
@@ -226,8 +224,7 @@ class TrackingCategory extends Remote\Model
     }
 
     /**
-     * @return TrackingOption[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TrackingOption[]
      */
     public function getOptions()
     {
@@ -236,6 +233,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param TrackingOption $value
+     *
      * @return TrackingCategory
      */
     public function addOption(TrackingOption $value)
@@ -252,8 +250,9 @@ class TrackingCategory extends Remote\Model
     }
 
     /**
-     * @return string $value
      * Returns selected option name
+     *
+     * @return string $value
      */
     public function getOption()
     {
@@ -262,6 +261,7 @@ class TrackingCategory extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return TrackingCategory
      */
     public function setOption($value)

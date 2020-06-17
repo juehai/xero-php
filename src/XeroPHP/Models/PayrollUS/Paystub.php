@@ -14,123 +14,117 @@ use XeroPHP\Models\PayrollUS\Paystub\TimesheetEarningsLine;
 class Paystub extends Remote\Model
 {
     /**
-     * Xero identifier for payroll employee
+     * Xero identifier for payroll employee.
      *
      * @property string EmployeeID
      */
 
     /**
-     * Xero identifier for payroll paystub
+     * Xero identifier for payroll paystub.
      *
      * @property string PaystubID
      */
 
     /**
-     *
-     *
      * @property string PayRunID
      */
 
     /**
-     * Employee first name
+     * Employee first name.
      *
      * @property string FirstName
      */
 
     /**
-     * Employee last name
+     * Employee last name.
      *
      * @property string LastName
      */
 
     /**
-     * Last edited
+     * Last edited.
      *
      * @property string LastEdited
      */
 
     /**
-     * The Total Earnings for the PayRun
+     * The Total Earnings for the PayRun.
      *
      * @property float[] Earnings
      */
 
     /**
-     * The Total Deductions for the PayRun
+     * The Total Deductions for the PayRun.
      *
      * @property float[] Deductions
      */
 
     /**
-     * The Total Tax for the PayRun
+     * The Total Tax for the PayRun.
      *
      * @property float Tax
      */
 
     /**
-     * The Total Reimbursement for the PayRun
+     * The Total Reimbursement for the PayRun.
      *
      * @property float[] Reimbursements
      */
 
     /**
-     * The Total NetPay for the PayRun
+     * The Total NetPay for the PayRun.
      *
      * @property float NetPay
      */
 
     /**
-     *
-     *
      * @property \DateTimeInterface UpdatedDateUTC
      */
 
     /**
-     * See EarningsLine
+     * See EarningsLine.
      *
      * @property EarningsLine[] EarningsLines
      */
 
     /**
-     * See LeaveEarningsLine
+     * See LeaveEarningsLine.
      *
      * @property LeaveEarningsLine[] LeaveEarningsLines
      */
 
     /**
-     * See TimesheetEarningsLine
+     * See TimesheetEarningsLine.
      *
      * @property TimesheetEarningsLine[] TimesheetEarningsLines
      */
 
     /**
-     * See DeductionLine
+     * See DeductionLine.
      *
      * @property DeductionLine[] DeductionLines
      */
 
     /**
-     * See ReimbursementLine
+     * See ReimbursementLine.
      *
      * @property ReimbursementLine[] ReimbursementLines
      */
 
     /**
-     * See BenefitLine
+     * See BenefitLine.
      *
      * @property BenefitLine[] BenefitLines
      */
 
     /**
-     * See TimeOffLine
+     * See TimeOffLine.
      *
      * @property TimeOffLine[] TimeOffLines
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -139,9 +133,8 @@ class Paystub extends Remote\Model
         return 'Paystubs';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -150,9 +143,8 @@ class Paystub extends Remote\Model
         return 'Paystub';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -161,9 +153,8 @@ class Paystub extends Remote\Model
         return 'PaystubID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -172,9 +163,8 @@ class Paystub extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -185,13 +175,12 @@ class Paystub extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -235,6 +224,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setEmployeeID($value)
@@ -255,6 +245,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setPaystubID($value)
@@ -275,6 +266,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setPayRunID($value)
@@ -295,6 +287,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setFirstName($value)
@@ -315,6 +308,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setLastName($value)
@@ -335,6 +329,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Paystub
      */
     public function setLastEdited($value)
@@ -347,7 +342,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return float[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getEarnings()
     {
@@ -356,6 +350,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Paystub
      */
     public function addEarning($value)
@@ -371,7 +366,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return float[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getDeductions()
     {
@@ -380,6 +374,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Paystub
      */
     public function addDeduction($value)
@@ -403,6 +398,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Paystub
      */
     public function setTax($value)
@@ -415,7 +411,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return float[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getReimbursements()
     {
@@ -424,6 +419,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Paystub
      */
     public function addReimbursement($value)
@@ -447,6 +443,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Paystub
      */
     public function setNetPay($value)
@@ -467,6 +464,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param \DateTimeInterface $value
+     *
      * @return Paystub
      */
     public function setUpdatedDateUTC(\DateTimeInterface $value)
@@ -479,7 +477,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return EarningsLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getEarningsLines()
     {
@@ -488,6 +485,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param EarningsLine $value
+     *
      * @return Paystub
      */
     public function addEarningsLine(EarningsLine $value)
@@ -503,7 +501,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return LeaveEarningsLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getLeaveEarningsLines()
     {
@@ -512,6 +509,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param LeaveEarningsLine $value
+     *
      * @return Paystub
      */
     public function addLeaveEarningsLine(LeaveEarningsLine $value)
@@ -526,8 +524,7 @@ class Paystub extends Remote\Model
     }
 
     /**
-     * @return TimesheetEarningsLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TimesheetEarningsLine[]
      */
     public function getTimesheetEarningsLines()
     {
@@ -536,6 +533,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param TimesheetEarningsLine $value
+     *
      * @return Paystub
      */
     public function addTimesheetEarningsLine(TimesheetEarningsLine $value)
@@ -551,7 +549,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return DeductionLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getDeductionLines()
     {
@@ -560,6 +557,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param DeductionLine $value
+     *
      * @return Paystub
      */
     public function addDeductionLine(DeductionLine $value)
@@ -575,7 +573,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return ReimbursementLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getReimbursementLines()
     {
@@ -584,6 +581,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param ReimbursementLine $value
+     *
      * @return Paystub
      */
     public function addReimbursementLine(ReimbursementLine $value)
@@ -599,7 +597,6 @@ class Paystub extends Remote\Model
 
     /**
      * @return BenefitLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getBenefitLines()
     {
@@ -608,6 +605,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param BenefitLine $value
+     *
      * @return Paystub
      */
     public function addBenefitLine(BenefitLine $value)
@@ -622,8 +620,7 @@ class Paystub extends Remote\Model
     }
 
     /**
-     * @return TimeOffLine[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
+     * @return Remote\Collection|TimeOffLine[]
      */
     public function getTimeOffLines()
     {
@@ -632,6 +629,7 @@ class Paystub extends Remote\Model
 
     /**
      * @param TimeOffLine $value
+     *
      * @return Paystub
      */
     public function addTimeOffLine(TimeOffLine $value)

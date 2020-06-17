@@ -7,57 +7,50 @@ use XeroPHP\Remote;
 class EarningsRate extends Remote\Model
 {
     /**
-     * Name of the earnings rate (max length = 100)
+     * Name of the earnings rate (max length = 100).
      *
      * @property string Name
      */
 
     /**
-     * This property has been removed from the Xero API
-     *
-     * @property string DisplayName
-     * @deprecated
-     */
-
-    /**
-     * See Accounts
+     * See Accounts.
      *
      * @property string AccountCode
      */
 
     /**
-     * Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT
+     * Type of units used to record earnings (max length = 50). Only When RateType is RATEPERUNIT.
      *
      * @property string TypeOfUnits
      */
 
     /**
      * Most payments are subject to tax, so you should only set this value if you are sure that a payment
-     * is exempt from PAYG withholding
+     * is exempt from PAYG withholding.
      *
      * @property string IsExemptFromTax
      */
 
     /**
-     * See the ATO website for details of which payments are exempt from SGC
+     * See the ATO website for details of which payments are exempt from SGC.
      *
      * @property string IsExemptFromSuper
      */
 
     /**
-     * See EarningsTypes
+     * See EarningsTypes.
      *
      * @property string EarningsType
      */
 
     /**
-     * Xero identifier
+     * Xero identifier.
      *
      * @property string EarningsRateID
      */
 
     /**
-     * See RateTypes
+     * See RateTypes.
      *
      * @property string RateType
      */
@@ -70,37 +63,61 @@ class EarningsRate extends Remote\Model
 
     /**
      * This is the multiplier used to calculate the rate per unit, based on the employee’s ordinary
-     * earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE
+     * earnings rate. For example, for time and a half enter 1.5. Only applicable if RateType is MULTIPLE.
      *
      * @property float Multiplier
      */
 
     /**
-     * Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE
+     * Indicates that this earnings rate should accrue leave. Only applicable if RateType is MULTIPLE.
      *
      * @property float AccrueLeave
      */
 
     /**
-     * Option Amount for FIXEDAMOUNT RateType EarningsRate
+     * Option AllowanceType for ALLOWANCE EarningsType EarningsRate.
+     * Used to group allowances for reporting to the ATO. Undocumented. Only applicable if EarningsType is ALLOWANCE.
      *
-     * @property float Amount
+     * @property string AllowanceType
      */
+    const ALLOWANCETYPE_CAR = 'CAR';
 
+    const ALLOWANCETYPE_LAUNDRY = 'LAUNDRY';
 
-    const EARNINGSTYPE_FIXED = 'FIXED';
-    const EARNINGSTYPE_ORDINARYTIMEEARNINGS = 'ORDINARYTIMEEARNINGS';
-    const EARNINGSTYPE_OVERTIMEEARNINGS = 'OVERTIMEEARNINGS';
-    const EARNINGSTYPE_ALLOWANCE = 'ALLOWANCE';
-    const EARNINGSTYPE_LUMPSUMD = 'LUMPSUMD';
+    const ALLOWANCETYPE_MEALS = 'MEALS';
 
-    const RATETYPE_FIXEDAMOUNT = 'FIXEDAMOUNT';
-    const RATETYPE_MULTIPLE = 'MULTIPLE';
-    const RATETYPE_RATEPERUNIT = 'RATEPERUNIT';
+    const ALLOWANCETYPE_TRANSPORT = 'TRANSPORT';
+
+    const ALLOWANCETYPE_TRAVEL = 'TRAVEL';
+
+    const ALLOWANCETYPE_OTHER = 'OTHER';
 
 
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Option Amount for FIXEDAMOUNT RateType EarningsRate.
+     *
+     * @property float Amount
+     */
+    const EARNINGSTYPE_FIXED = 'FIXED';
+
+    const EARNINGSTYPE_ORDINARYTIMEEARNINGS = 'ORDINARYTIMEEARNINGS';
+
+    const EARNINGSTYPE_OVERTIMEEARNINGS = 'OVERTIMEEARNINGS';
+
+    const EARNINGSTYPE_ALLOWANCE = 'ALLOWANCE';
+
+    const EARNINGSTYPE_LUMPSUMD = 'LUMPSUMD';
+
+    const EARNINGS_TYPE_EMPLOYMENTTERMINATIONPAYMENT = 'EMPLOYMENTTERMINATIONPAYMENT';
+
+    const RATETYPE_FIXEDAMOUNT = 'FIXEDAMOUNT';
+
+    const RATETYPE_MULTIPLE = 'MULTIPLE';
+
+    const RATETYPE_RATEPERUNIT = 'RATEPERUNIT';
+
+    /**
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -109,9 +126,8 @@ class EarningsRate extends Remote\Model
         return 'EarningsRates';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -120,9 +136,8 @@ class EarningsRate extends Remote\Model
         return 'EarningsRate';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -131,9 +146,8 @@ class EarningsRate extends Remote\Model
         return 'EarningsRateID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -142,9 +156,8 @@ class EarningsRate extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -153,13 +166,12 @@ class EarningsRate extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -167,7 +179,6 @@ class EarningsRate extends Remote\Model
     {
         return [
             'Name' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
-            'DisplayName' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'AccountCode' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'TypeOfUnits' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'IsExemptFromTax' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
@@ -179,6 +190,8 @@ class EarningsRate extends Remote\Model
             'Multiplier' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'AccrueLeave' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Amount' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
+            'CurrentRecord' => [false, self::PROPERTY_TYPE_BOOLEAN, null, false, false],
+            'AllowanceType' => [false, self::PROPERTY_TYPE_ENUM, null, false, false]
         ];
     }
 
@@ -197,34 +210,13 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setName($value)
     {
         $this->propertyUpdated('Name', $value);
         $this->_data['Name'] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     * @deprecated
-     */
-    public function getDisplayName()
-    {
-        return $this->_data['DisplayName'];
-    }
-
-    /**
-     * @param string $value
-     * @return EarningsRate
-     * @deprecated
-     */
-    public function setDisplayName($value)
-    {
-        $this->propertyUpdated('DisplayName', $value);
-        $this->_data['DisplayName'] = $value;
 
         return $this;
     }
@@ -239,6 +231,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setAccountCode($value)
@@ -259,6 +252,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setTypeOfUnit($value)
@@ -279,6 +273,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setIsExemptFromTax($value)
@@ -299,12 +294,34 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setIsExemptFromSuper($value)
     {
         $this->propertyUpdated('IsExemptFromSuper', $value);
         $this->_data['IsExemptFromSuper'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAllowanceType()
+    {
+        return $this->_data['AllowanceType'];
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return EarningsRate
+     */
+    public function setAllowanceType($value)
+    {
+        $this->propertyUpdated('AllowanceType', $value);
+        $this->_data['AllowanceType'] = $value;
 
         return $this;
     }
@@ -319,6 +336,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setEarningsType($value)
@@ -339,6 +357,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setEarningsRateID($value)
@@ -359,6 +378,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return EarningsRate
      */
     public function setRateType($value)
@@ -379,6 +399,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return EarningsRate
      */
     public function setRatePerUnit($value)
@@ -399,6 +420,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return EarningsRate
      */
     public function setMultiplier($value)
@@ -419,6 +441,7 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return EarningsRate
      */
     public function setAccrueLeave($value)
@@ -439,12 +462,34 @@ class EarningsRate extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return EarningsRate
      */
     public function setAmount($value)
     {
         $this->propertyUpdated('Amount', $value);
         $this->_data['Amount'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getCurrentRecord()
+    {
+        return $this->_data['CurrentRecord'];
+    }
+
+    /**
+     * @param bool $value
+     *
+     * @return EarningsRate
+     */
+    public function setCurrentRecord($value)
+    {
+        $this->propertyUpdated('CurrentRecord', $value);
+        $this->_data['CurrentRecord'] = $value;
 
         return $this;
     }

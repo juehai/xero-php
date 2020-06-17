@@ -3,6 +3,7 @@
 namespace XeroPHP;
 
 use XeroPHP\Models\Accounting\TrackingCategory;
+use XeroPHP\Models\PayrollAU\Payslip\TimesheetEarningsLine;
 
 /**
  * Unfortunate class for methods that don't really have a home.
@@ -12,6 +13,10 @@ use XeroPHP\Models\Accounting\TrackingCategory;
  */
 class Helpers
 {
+    const PACKAGE_NAME         = 'calcinai/xero-php';
+    const PACKAGE_VERSION_FILE = __DIR__ . '/VERSION';
+    const DEFAULT_VERSION      = 'v2.0.0';
+
     /**
      * Convert a multi-d assoc array into an xml representation.
      * Straightforward <key>val</key> unless there are numeric keys,
@@ -19,6 +24,7 @@ class Helpers
      *
      * @param array $array
      * @param null $key_override
+     *
      * @return string
      */
     public static function arrayToXML(array $array, $key_override = null)
@@ -74,13 +80,14 @@ class Helpers
             if ($child->count() > 0) {
                 $node = self::XMLToArray($child);
             } else {
-                $node = (string) $child;
+                $node = (string)$child;
             }
 
             //don't make it assoc, as the keys will all be the same
             if ($child_name === $singular_node_name ||
                 //Handle strange XML
-                ($singular_node_name === 'Tracking' && $child_name === TrackingCategory::getRootNodeName())) {
+                ($singular_node_name === 'Tracking' && $child_name === TrackingCategory::getRootNodeName()) ||
+                ($singular_node_name == TimesheetEarningsLine::getRootNodeName() && $child_name == 'EarningsLine')) {
                 $output[] = $node;
             } else {
                 $output[$child_name] = $node;
@@ -96,6 +103,7 @@ class Helpers
      * so only good for a quick basic singularisation.
      *
      * @param $string
+     *
      * @return mixed
      */
     public static function singularize($string)
@@ -158,7 +166,7 @@ class Helpers
 
     public static function isAssoc(array $array)
     {
-        return (bool) count(array_filter(array_keys($array), 'is_string'));
+        return (bool)count(array_filter(array_keys($array), 'is_string'));
     }
 
     /**
@@ -169,7 +177,8 @@ class Helpers
      * @param string $format
      * @param string|null $glue
      * @param bool $escape
-     * @return string|array if no glue provided, it won't be imploded
+     *
+     * @return array|string if no glue provided, it won't be imploded
      */
     public static function flattenAssocArray(
         array $array,
@@ -189,9 +198,9 @@ class Helpers
         //Return array if no glue provided
         if ($glue === null) {
             return $pairs;
-        } else {
-            return implode($glue, $pairs);
         }
+
+        return implode($glue, $pairs);
     }
 
     /**
@@ -201,6 +210,7 @@ class Helpers
      * the SimpleOAuth class.
      *
      * @param $string
+     *
      * @return string
      */
     public static function escape($string)
@@ -211,7 +221,9 @@ class Helpers
     /**
      * @param $knownString string
      * @param $userInput string
+     *
      * @return bool
+     *
      * @see https://github.com/symfony/polyfill-php56
      */
     public static function hashEquals($knownString, $userInput)
@@ -220,14 +232,14 @@ class Helpers
             return hash_equals($knownString, $userInput);
         }
 
-        if (! is_string($knownString)) {
-            trigger_error('Expected known_string to be a string, '.gettype($knownString).' given', E_USER_WARNING);
+        if (!is_string($knownString)) {
+            trigger_error('Expected known_string to be a string, ' . gettype($knownString) . ' given', E_USER_WARNING);
 
             return false;
         }
 
-        if (! is_string($userInput)) {
-            trigger_error('Expected user_input to be a string, '.gettype($userInput).' given', E_USER_WARNING);
+        if (!is_string($userInput)) {
+            trigger_error('Expected user_input to be a string, ' . gettype($userInput) . ' given', E_USER_WARNING);
 
             return false;
         }
@@ -251,5 +263,20 @@ class Helpers
         }
 
         return $result === 0;
+    }
+
+
+    /**
+     * TODO drop PHP5 and use packageVersions package
+     *
+     * @return bool|false|string
+     */
+    public static function getPackageVersion()
+    {
+        if (!file_exists(self::PACKAGE_VERSION_FILE)) {
+            return self::DEFAULT_VERSION;
+        }
+
+        return file_get_contents(self::PACKAGE_VERSION_FILE);
     }
 }

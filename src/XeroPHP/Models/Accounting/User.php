@@ -7,51 +7,49 @@ use XeroPHP\Remote;
 class User extends Remote\Model
 {
     /**
-     * Xero identifier
+     * Xero identifier.
      *
      * @property string UserID
      */
 
     /**
-     * Email address of user
+     * Email address of user.
      *
      * @property string EmailAddress
      */
 
     /**
-     * First name of user
+     * First name of user.
      *
      * @property string FirstName
      */
 
     /**
-     * Last name of user
+     * Last name of user.
      *
      * @property string LastName
      */
 
     /**
-     * Timestamp of last change to user
+     * Timestamp of last change to user.
      *
      * @property \DateTimeInterface UpdatedDateUTC
      */
 
     /**
-     * Boolean to indicate if user is the subscriber
+     * Boolean to indicate if user is the subscriber.
      *
      * @property bool IsSubscriber
      */
 
     /**
-     * User role (see Types)
+     * User role (see Types).
      *
      * @property string OrganisationRole
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -60,9 +58,8 @@ class User extends Remote\Model
         return 'Users';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -71,9 +68,8 @@ class User extends Remote\Model
         return 'User';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -82,9 +78,8 @@ class User extends Remote\Model
         return 'UserID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -93,9 +88,8 @@ class User extends Remote\Model
         return Remote\URL::API_CORE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -105,13 +99,12 @@ class User extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -143,6 +136,7 @@ class User extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return User
      */
     public function setUserID($value)
@@ -163,6 +157,7 @@ class User extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return User
      */
     public function setEmailAddress($value)
@@ -183,6 +178,7 @@ class User extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return User
      */
     public function setFirstName($value)
@@ -203,6 +199,7 @@ class User extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return User
      */
     public function setLastName($value)
@@ -223,6 +220,7 @@ class User extends Remote\Model
 
     /**
      * @param \DateTimeInterface $value
+     *
      * @return User
      */
     public function setUpdatedDateUTC(\DateTimeInterface $value)
@@ -243,6 +241,7 @@ class User extends Remote\Model
 
     /**
      * @param bool $value
+     *
      * @return User
      */
     public function setIsSubscriber($value)
@@ -263,6 +262,7 @@ class User extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return User
      */
     public function setOrganisationRole($value)

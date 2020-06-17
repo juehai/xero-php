@@ -11,33 +11,31 @@ use XeroPHP\Models\PayrollAU\PayItem\ReimbursementType;
 class PayItem extends Remote\Model
 {
     /**
-     * See EarningsRates
+     * See EarningsRates.
      *
      * @property EarningsRate[] EarningsRates
      */
 
     /**
-     * See DeductionTypes
+     * See DeductionTypes.
      *
      * @property DeductionType[] DeductionTypes
      */
 
     /**
-     * See LeaveTypes
+     * See LeaveTypes.
      *
      * @property LeaveType[] LeaveTypes
      */
 
     /**
-     * See ReimbursementTypes
+     * See ReimbursementTypes.
      *
      * @property ReimbursementType[] ReimbursementTypes
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -46,20 +44,18 @@ class PayItem extends Remote\Model
         return 'PayItems';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
     public static function getRootNodeName()
     {
-        return 'PayItem';
+        return 'PayItems';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -68,9 +64,8 @@ class PayItem extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -79,9 +74,8 @@ class PayItem extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -92,13 +86,12 @@ class PayItem extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -119,7 +112,6 @@ class PayItem extends Remote\Model
 
     /**
      * @return EarningsRate[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getEarningsRates()
     {
@@ -128,6 +120,7 @@ class PayItem extends Remote\Model
 
     /**
      * @param EarningsRate $value
+     *
      * @return PayItem
      */
     public function addEarningsRate(EarningsRate $value)
@@ -143,7 +136,6 @@ class PayItem extends Remote\Model
 
     /**
      * @return DeductionType[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getDeductionTypes()
     {
@@ -152,6 +144,7 @@ class PayItem extends Remote\Model
 
     /**
      * @param DeductionType $value
+     *
      * @return PayItem
      */
     public function addDeductionType(DeductionType $value)
@@ -167,7 +160,6 @@ class PayItem extends Remote\Model
 
     /**
      * @return LeaveType[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getLeaveTypes()
     {
@@ -176,6 +168,7 @@ class PayItem extends Remote\Model
 
     /**
      * @param LeaveType $value
+     *
      * @return PayItem
      */
     public function addLeaveType(LeaveType $value)
@@ -191,7 +184,6 @@ class PayItem extends Remote\Model
 
     /**
      * @return ReimbursementType[]|Remote\Collection
-     * Always returns a collection, switch is for type hinting
      */
     public function getReimbursementTypes()
     {
@@ -200,6 +192,7 @@ class PayItem extends Remote\Model
 
     /**
      * @param ReimbursementType $value
+     *
      * @return PayItem
      */
     public function addReimbursementType(ReimbursementType $value)

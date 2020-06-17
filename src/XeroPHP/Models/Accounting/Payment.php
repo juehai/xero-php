@@ -10,64 +10,54 @@ class Payment extends Remote\Model
     use HistoryTrait;
 
     /**
-     *
-     *
      * @property Invoice Invoice
      */
 
     /**
-     *
-     *
      * @property CreditNote CreditNote
      */
 
     /**
-     *
-     *
      * @property Prepayment Prepayment
      */
 
     /**
-     *
-     *
      * @property Overpayment Overpayment
      */
 
     /**
-     *
-     *
      * @property Account Account
      */
 
     /**
-     * Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06
+     * Date the payment is being made (YYYY-MM-DD) e.g. 2009-09-06.
      *
      * @property \DateTimeInterface Date
      */
 
     /**
      * Exchange rate when payment is received. Only used for non base currency invoices and credit notes
-     * e.g. 0.7500
+     * e.g. 0.7500.
      *
      * @property float CurrencyRate
      */
 
     /**
      * The amount of the payment. Must be less than or equal to the outstanding amount owing on the invoice
-     * e.g. 200.00
+     * e.g. 200.00.
      *
      * @property float Amount
      */
 
     /**
-     * An optional description for the payment e.g. Direct Debit
+     * An optional description for the payment e.g. Direct Debit.
      *
      * @property string Reference
      */
 
     /**
      * An optional parameter for the payment. A boolean indicating whether you would like the payment to be
-     * created as reconciled when using PUT, or whether a payment has been reconciled when using GET
+     * created as reconciled when using PUT, or whether a payment has been reconciled when using GET.
      *
      * @property string IsReconciled
      */
@@ -85,38 +75,46 @@ class Payment extends Remote\Model
      */
 
     /**
-     * UTC timestamp of last update to the payment
+     * UTC timestamp of last update to the payment.
      *
      * @property \DateTimeInterface UpdatedDateUTC
      */
 
     /**
-     * The Xero identifier for an Payment e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9
+     * The Xero identifier for an Payment e.g. 297c2dc5-cc47-4afd-8ec8-74990b8761e9.
      *
      * @property string PaymentID
      */
-
-
     const PAYMENT_STATUS_AUTHORISED = 'AUTHORISED';
+
     const PAYMENT_STATUS_DELETED = 'DELETED';
 
     const PAYMENT_TERM_DAYSAFTERBILLDATE = 'DAYSAFTERBILLDATE';
+
     const PAYMENT_TERM_DAYSAFTERBILLMONTH = 'DAYSAFTERBILLMONTH';
+
     const PAYMENT_TERM_OFCURRENTMONTH = 'OFCURRENTMONTH';
+
     const PAYMENT_TERM_OFFOLLOWINGMONTH = 'OFFOLLOWINGMONTH';
 
     const PAYMENT_TYPE_ACCRECPAYMENT = 'ACCRECPAYMENT';
+
     const PAYMENT_TYPE_ACCPAYPAYMENT = 'ACCPAYPAYMENT';
+
     const PAYMENT_TYPE_ARCREDITPAYMENT = 'ARCREDITPAYMENT';
+
     const PAYMENT_TYPE_APCREDITPAYMENT = 'APCREDITPAYMENT';
+
     const PAYMENT_TYPE_AROVERPAYMENTPAYMENT = 'AROVERPAYMENTPAYMENT';
+
     const PAYMENT_TYPE_ARPREPAYMENTPAYMENT = 'ARPREPAYMENTPAYMENT';
+
     const PAYMENT_TYPE_APPREPAYMENTPAYMENT = 'APPREPAYMENTPAYMENT';
+
     const PAYMENT_TYPE_APOVERPAYMENTPAYMENT = 'APOVERPAYMENTPAYMENT';
 
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -125,9 +123,8 @@ class Payment extends Remote\Model
         return 'Payments';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -136,9 +133,8 @@ class Payment extends Remote\Model
         return 'Payment';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -147,9 +143,8 @@ class Payment extends Remote\Model
         return 'PaymentID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -158,9 +153,8 @@ class Payment extends Remote\Model
         return Remote\URL::API_CORE;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -172,13 +166,12 @@ class Payment extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -217,6 +210,7 @@ class Payment extends Remote\Model
 
     /**
      * @param Invoice $value
+     *
      * @return Payment
      */
     public function setInvoice(Invoice $value)
@@ -237,6 +231,7 @@ class Payment extends Remote\Model
 
     /**
      * @param CreditNote $value
+     *
      * @return Payment
      */
     public function setCreditNote(CreditNote $value)
@@ -257,6 +252,7 @@ class Payment extends Remote\Model
 
     /**
      * @param Prepayment $value
+     *
      * @return Payment
      */
     public function setPrepayment(Prepayment $value)
@@ -277,6 +273,7 @@ class Payment extends Remote\Model
 
     /**
      * @param Overpayment $value
+     *
      * @return Payment
      */
     public function setOverpayment(Overpayment $value)
@@ -297,6 +294,7 @@ class Payment extends Remote\Model
 
     /**
      * @param Account $value
+     *
      * @return Payment
      */
     public function setAccount(Account $value)
@@ -317,6 +315,7 @@ class Payment extends Remote\Model
 
     /**
      * @param \DateTimeInterface $value
+     *
      * @return Payment
      */
     public function setDate(\DateTimeInterface $value)
@@ -337,6 +336,7 @@ class Payment extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Payment
      */
     public function setCurrencyRate($value)
@@ -357,6 +357,7 @@ class Payment extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return Payment
      */
     public function setAmount($value)
@@ -377,6 +378,7 @@ class Payment extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Payment
      */
     public function setReference($value)
@@ -397,6 +399,7 @@ class Payment extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Payment
      */
     public function setIsReconciled($value)
@@ -417,6 +420,7 @@ class Payment extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Payment
      */
     public function setStatus($value)
@@ -435,7 +439,6 @@ class Payment extends Remote\Model
         return $this->_data['PaymentType'];
     }
 
-
     /**
      * @return \DateTimeInterface
      */
@@ -443,7 +446,6 @@ class Payment extends Remote\Model
     {
         return $this->_data['UpdatedDateUTC'];
     }
-
 
     /**
      * @return string
@@ -455,6 +457,7 @@ class Payment extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Payment
      */
     public function setPaymentID($value)

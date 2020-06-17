@@ -7,33 +7,31 @@ use XeroPHP\Remote;
 class Account extends Remote\Model
 {
     /**
-     * Xero account identifier. e.g c56b19ef-75bf-45e8-98a4-e699a96609f7
+     * Xero account identifier. e.g c56b19ef-75bf-45e8-98a4-e699a96609f7.
      *
      * @property string AccountID
      */
 
     /**
-     * See Account Types
+     * See Account Types.
      *
      * @property string Type
      */
 
     /**
-     * Customer defined account code eg. 200
+     * Customer defined account code eg. 200.
      *
      * @property string Code
      */
 
     /**
-     * Name of account
+     * Name of account.
      *
      * @property string Name
      */
 
-
-
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -42,9 +40,8 @@ class Account extends Remote\Model
         return 'Accounts';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -53,9 +50,8 @@ class Account extends Remote\Model
         return 'Account';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -64,9 +60,8 @@ class Account extends Remote\Model
         return 'AccountID';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -75,9 +70,8 @@ class Account extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -86,13 +80,12 @@ class Account extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -121,6 +114,7 @@ class Account extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Account
      */
     public function setAccountID($value)
@@ -141,6 +135,7 @@ class Account extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Account
      */
     public function setType($value)
@@ -161,6 +156,7 @@ class Account extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Account
      */
     public function setCode($value)
@@ -181,6 +177,7 @@ class Account extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return Account
      */
     public function setName($value)

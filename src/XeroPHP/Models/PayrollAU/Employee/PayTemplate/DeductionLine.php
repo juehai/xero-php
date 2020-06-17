@@ -7,31 +7,31 @@ use XeroPHP\Remote;
 class DeductionLine extends Remote\Model
 {
     /**
-     * Xero deduction type identifier
+     * Xero deduction type identifier.
      *
      * @property string DeductionTypeID
      */
 
     /**
-     * See Deduction Type Calculation Type
+     * See Deduction Type Calculation Type.
      *
      * @property float CalculationType
      */
 
     /**
-     * The percentage of deduction line
+     * The percentage of deduction line.
      *
      * @property string Percentage
      */
 
     /**
-     * The deduction amount
+     * The deduction amount.
      *
      * @property float Amount
      */
 
     /**
-     * Get the resource uri of the class (Contacts) etc
+     * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
      */
@@ -40,9 +40,8 @@ class DeductionLine extends Remote\Model
         return 'DeductionLine';
     }
 
-
     /**
-     * Get the root node name.  Just the unqualified classname
+     * Get the root node name.  Just the unqualified classname.
      *
      * @return string
      */
@@ -51,9 +50,8 @@ class DeductionLine extends Remote\Model
         return 'DeductionLine';
     }
 
-
     /**
-     * Get the guid property
+     * Get the guid property.
      *
      * @return string
      */
@@ -62,9 +60,8 @@ class DeductionLine extends Remote\Model
         return '';
     }
 
-
     /**
-     * Get the stem of the API (core.xro) etc
+     * Get the stem of the API (core.xro) etc.
      *
      * @return string|null
      */
@@ -73,9 +70,8 @@ class DeductionLine extends Remote\Model
         return Remote\URL::API_PAYROLL;
     }
 
-
     /**
-     * Get the supported methods
+     * Get the supported methods.
      */
     public static function getSupportedMethods()
     {
@@ -84,13 +80,12 @@ class DeductionLine extends Remote\Model
     }
 
     /**
-     *
      * Get the properties of the object.  Indexed by constants
      *  [0] - Mandatory
      *  [1] - Type
      *  [2] - PHP type
      *  [3] - Is an Array
-     *  [4] - Saves directly
+     *  [4] - Saves directly.
      *
      * @return array
      */
@@ -119,6 +114,7 @@ class DeductionLine extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return DeductionLine
      */
     public function setDeductionTypeID($value)
@@ -139,6 +135,7 @@ class DeductionLine extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return DeductionLine
      */
     public function setCalculationType($value)
@@ -159,6 +156,7 @@ class DeductionLine extends Remote\Model
 
     /**
      * @param string $value
+     *
      * @return DeductionLine
      */
     public function setPercentage($value)
@@ -179,6 +177,7 @@ class DeductionLine extends Remote\Model
 
     /**
      * @param float $value
+     *
      * @return PayTemplate
      */
     public function setAmount($value)
